@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/index.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/chat", "methods": ["POST"], "dest": "/api/index.py" },
+    { "src": "/", "dest": "/static/chatbot.html" },
+    { "src": "/static/(.*)", "dest": "/static/$1" }
+  ]
+}
